@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Reimbursement Management</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Managers Welcome</h1>
+	<select id="statusFilter" class="mb-3" aria-label="Default select example" onchange="filterUpdate()">
+		<option selected value="ALL">ALL</option>
+		<option value="OPEN">OPEN</option>
+		<option value="DENIED">DENIED</option>
+		<option value="APPROVED">APPROVED</option>
+	</select>
+
+	<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modalLabel">Manage Ticket</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <h6>Ticket Summary</h6>
+	        <p>Ticket #<strong id="ticketId"></strong></p>
+	        <p>Type: <strong id="ticketType"></strong></p>
+	        <p>Description: <strong id="ticketDesc"></strong></p>
+	        <p>Amount: <strong id="ticketAmount"></strong></p>
+	      </div>
+	      <div class="modal-footer">
+	      	<button class="btn btn-primary" onclick="updateTicket(this)" data-bs-dismiss="modal">Approve</button>
+	        <button class="btn btn-danger" onclick="updateTicket(this)" data-bs-dismiss="modal">Deny</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="table-responsive">
+		<table id="ticketTable" class="table table-dark table-hover caption-top">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Employee ID</th>
+					<th>Type</th>
+					<th>Description</th>
+					<th>Amount</th>
+					<th>Status</th>
+					<th>Date Submitted</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</body>
+<script src="../managerMenu.js"></script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+</head>
+<body>
+<h1>Login Screen</h1>
+<form method="POST" action="/ExpenseReimbursement/api/login">
+	<input id="username" name="username" type="text" placeholder="Username">
+	<input id="password" name="password" type="password" placeholder="Password">
+	<button type="submit">Login</button>
+</form>
+
+<p style="color: red">Username and Password combination does not exist.  Please try again.</p>
+
+
+<script src="ajax.js"></script>
+</body>
+</html>
